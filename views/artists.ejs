@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Band</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container h-100 d-flex flex-column">
+      <div class="alert alert-primary" role="alert">
+        <h1>Search Results</h1>
+      </div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-white">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Artists</li>
+        </ol>
+      </nav>
+      <ul class="list-group">
+        <% for( let i = 0; i < artists.length; i++ ) { %>
+        <li class="list-group-item">
+            <a href="/discographie?id=<%= artists[i].id %>"><span class="font-weight-bold text-primary"><%= artists[i].name %> </span></a>
+            <span><%= artists[i].country %> </span>
+            <span><%= artists[i].disambiguation %></span>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </body>
+</html>
